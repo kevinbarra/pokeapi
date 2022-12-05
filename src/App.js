@@ -71,16 +71,18 @@ function App() {
   
   return (
     <div className="App card">
-      <div className='card-body'>
+      <div className='card-body justify-content-center'>
         
       <div className='titulo'>
-        <h1>Pokedex</h1>
+        <h1 >Pokedex</h1>
+        <br></br>
         </div>
       
-        <div className='principal card' >
+        <div className='principal card ml-3 mt-3' >
           {pokemons.length > 0 ? (<>{pokemons.map((item)=> { return <div 
           
-          className='card'
+          className=' justify-content-center d-flex'
+
           key={item.name}
           >
         
@@ -91,10 +93,10 @@ function App() {
         className=''
         ></img>
         <div className='card-body'>
-        <p className='card-text'>{item.name} <br></br> {item.base_experience}</p> 
+        <p className='card-text'><b>{item.name}</b> <br></br> {item.base_experience}</p> 
         
 
-        <button className='btn btn-primary' onClick={()=>addToTeam(item)}> add</button>
+        <button className='btn btn-primary' onClick={()=>addToTeam(item)}> Add</button>
         <hr></hr>
 
         </div>
@@ -104,10 +106,11 @@ function App() {
         )}</>):(<><h1>null</h1></>)}
         </div>
         <h1>Equipo</h1>
-        <div className='principal card' width="40%">
+        <br></br>
+        <div className='principal card  ml-3 mt-3 ' width="40%">
           
           {equipo.length > 0 ? (<>{equipo.map((item)=> { return <div 
-          
+          className='justify-content-center d-flex'
           
           key={item.name}
           >
@@ -118,12 +121,12 @@ function App() {
         className=''
         ></img>
        <div className='card-body'>
-       <p className='card-t'>{item.name} <br/> {item.base_experience}</p> 
+       <p className='card-t'><b>{item.name}</b> <br/> {item.base_experience}</p> 
         
        
 
         <button className='btn btn-primary' onClick={()=>deleteDeTeam(item)}> Delete</button>
-
+        <hr></hr>
        </div>
          </div>}
       
